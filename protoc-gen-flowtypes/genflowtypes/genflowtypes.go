@@ -13,6 +13,7 @@ import (
 	pbdescriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
 	"github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
 	"github.com/pkg/errors"
+	"github.com/iancoleman/strcase"
 	"github.com/StK88/grpcutil/protoc-gen-flowtypes/opts"
 )
 
@@ -91,6 +92,7 @@ type objectFlowType struct {
 func (t *objectFlowType) FlowType() string {
 	fields := []string{}
 	for _, f := range t.Fields {
+		fieldName := strcase.ToLowerCamel(f.Name())
 		optionalIndicator := "?"
 		nullableIndicator := "?"
 		if f.IsRequired() {
@@ -99,7 +101,7 @@ func (t *objectFlowType) FlowType() string {
 		if !f.IsNullable() {
 			nullableIndicator = ""
 		}
-		fields = append(fields, fmt.Sprintf("  %s%s: %s%s", f.Name(), optionalIndicator, nullableIndicator, f.FlowType()))
+		fields = append(fields, fmt.Sprintf("  %s%s: %s%s", fieldName, optionalIndicator, nullableIndicator, f.FlowType()))
 	}
 	return fmt.Sprintf("{\n%s\n}", strings.Join(fields, ",\n"))
 }
