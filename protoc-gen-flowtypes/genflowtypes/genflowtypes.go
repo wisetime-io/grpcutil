@@ -181,6 +181,14 @@ func (cfg GeneratorOptions) fieldToType(pkg string, f *descriptor.Field, reg *de
 		} else {
 			name := cfg.enumTypeName(e)
 			fieldType = newSimpleType(name, opts)
+			if e.File.GetPackage() != pkg {
+				parts := strings.Split(e.FQEN(), ".")
+				pn := strings.Join(parts[:len(parts)-1], "")
+				if _, ok := deps[pn]; !ok {
+					deps[pn] = make(map[string]bool)
+				}
+				deps[pn][e.GetName()] = true
+			}
 		}
 	}
 	if f.GetLabel() == pbdescriptor.FieldDescriptorProto_LABEL_REPEATED {
