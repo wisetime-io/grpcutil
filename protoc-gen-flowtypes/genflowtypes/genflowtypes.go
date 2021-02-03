@@ -11,7 +11,7 @@ import (
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	pbdescriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
-	"github.com/grpc-ecosystem/grpc-gateway/v2/internal/descriptor"
+	"github.com/StK88/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
 	"github.com/pkg/errors"
 	"github.com/iancoleman/strcase"
 	"github.com/StK88/grpcutil/protoc-gen-flowtypes/opts"
