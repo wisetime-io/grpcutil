@@ -11,10 +11,10 @@ import (
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	pbdescriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
-	"github.com/StK88/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
+	"github.com/wisetime-io/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
 	"github.com/pkg/errors"
 	"github.com/iancoleman/strcase"
-	"github.com/StK88/grpcutil/protoc-gen-flowtypes/opts"
+	"github.com/wisetime-io/grpcutil/protoc-gen-flowtypes/opts"
 )
 
 // Dependencies maps packages names to imported type names.

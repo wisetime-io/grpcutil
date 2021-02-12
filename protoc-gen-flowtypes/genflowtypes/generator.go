@@ -8,9 +8,9 @@ import (
 	"github.com/golang/glog"
 	"github.com/golang/protobuf/proto"
 	plugin "github.com/golang/protobuf/protoc-gen-go/plugin"
-	"github.com/StK88/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
+	"github.com/wisetime-io/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
 	"github.com/pkg/errors"
-	"github.com/StK88/grpcutil/protoc-gen-flowtypes/opts"
+	"github.com/wisetime-io/grpcutil/protoc-gen-flowtypes/opts"
 )
 
 var (
